@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>統計学の初歩の初歩の初歩に入門してみた</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+                <div class="slides">
+
+                <section data-background="https://cdn3.iconfinder.com/data/icons/technology-mix/200/Technology_Mix_-_Final-06-128.png">
+                    <h1>統計学を学び始めた<br>その1</h1>
+                    <h3>株式会社LIG</h3>
+                    <h4><small><a href="http://liginc.co.jp/member/member_detail?user=tomoki" target="_blank">Tomoki Komatsu</a></small></h4>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>統計学とは？？？</h2>
+                    <p class="fragment">統計学<br>is</p>
+                    <p class="fragment">集めたデータをを整理する学問である</p>
+                  </section>
+                </section>
+
+                <section>
+                  <h2>統計学を勉強する理由？？？</h2>
+                  <p class="fragment">見るべき数字を把握するためかなと小松は考えます。</p>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>見るべき数字について考える</h2>
+                  </section>
+                  <section>
+                    <h2>そこで母集団と標本</h2>
+                  </section>
+                  <section>
+                    <h3>母集団とは</h3>
+                    <p class="fragment">数値をとる際に対象となるもの全てです。<br>20代の男性へのアンケートとなれば、日本中の20代男性が対象となります。</p>
+                  </section>
+                  <section>
+                    <h3>標本とは</h3>
+                    <p class="fragment">母集団の中から絞り込んだ対象です。<br>
+                        母集団で計測することが信頼性が高く望ましいのですが現実的ではないので母集団から抽出した対象を標本と呼びます。</p>
+                  </section>
+                  <section>
+                    <h3>つまり</h3>
+                    <p class="fragment">基本的には標本から数値をとることになります。</p>
+                    <small class="fragment">※標本の抽出方法については今後学べるはず！</small>
+                  </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>データには2種類ある</h2>
+                    <p>見るべき数字であるデータには大きく2種類あります</p>
+                  </section>
+                  <section>
+                    <h2>カテゴリカルデータ</h2>
+                    <p class="fragment">好きな食べ物や支持政党のような数えることが出来ないデータです。</p>
+                  </section>
+                  <section>
+                    <h2>量的データ</h2>
+                    <p class="fragment">身長や体重など数値そのものを足したり引いたりすることに<br>意味のあるデータです。</p>
+                    <p class="fragment">さらに・・・量的データは2つに分けることができます。</p>
+                  </section>
+                  <section>
+                    <h2>離散型データ</h2>
+                    <p class="fragment">車やサイコロの値など隣り合う2つの数値の間に値がないものです。<br>
+                      </p>
+                  </section>
+                  <section>
+                    <h2>連続データ</h2>
+                    <p class="fragment">身長や体重など細かく連続するデータです。<br>
+                    例えば身長は170cmと171cmの間に170.5や170.01など連続した数値もあります。</p>
+                  </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>代表値</h2>
+                    <p class="fragment">平均や中央値、最頻値</p>
+                  </section>
+                  <section>
+                    <h2>中央値</h2>
+                    <p class="fragment">データを大きさ順に並べた時に中央にくる値</p>
+                    <p class="fragment">例えば・・・平均年収と一口に言っても</p>
+                  </section>
+                  <section data-background="">
+                    <img src="http://type.jp/s/nenshu_camp/images/type_11.jpg" alt="">
+                    <p class="fragment">となりますよね？？？</p>
+                    <p class="fragment">これは天上人も一般市民も同列にされてしまっているからです。</p>
+                    <p class="fragment">このようにデータに大きな乖離がある場合は中央値を求める方が妥当だったります。</p>
+                  </section>
+                  <section>
+                    <h2>例</h2>
+                    <p class="fragment">12, 90, 24, 53, 9, 33 と偶数個のデータを昇順に整列してみると・・・</p>
+                    <p class="fragment">9, 12, 24, 33, 53, 90</p>
+                    <p class="fragment">そして真ん中の<b>24</b>と<b>33</b>を足して割る2をした数値が中央値となります。</p>
+                    <p class="fragment">この場合・・・(24 + 33) / 2 = <b>28.5</b></p>
+                    <p class="fragment">奇数個の場合は純粋に真ん中の値が中央値となります。</p>
+                  </section>
+                  <section>
+                    <h2>最頻値</h2>
+                    <p class="fragment">データの中で最も多い値のことです。</p>
+                  </section>
+                  <section>
+                    <h2>練習問題</h2>
+                    <p class="fragment">↓の中央値と平均を求めてみましょう。</p>
+                    <p class="fragment">48, 4, 33, 45, 16, 22, 39, 35, 43, 12</p>
+                  </section>
+                  <section>
+                    <h2>回答</h2>
+                    <p class="fragment">中央値：4, 12, 16, 22, 33, 35, 39, 43, 45, 48</p>
+                    <p class="fragment">なので<b>( 33 + 35 ) / 2 = 34</b></p>
+                    <p class="fragment">平均：(48 + 4 + 33 + 45 + 16 + 22 + 39 + 35 + 43 + 12) / 10 = 29.7</p>
+                  </section>
+                  <section>
+                    <h2>平均と中央値どっちを使うべき？？？</h2>
+                    <p class="fragment">まずは平均と中央値の2つを出して、この2つが大きく乖離していなければ平均を見る、乖離していれば中央値を見るとよいと思います。</p>
+                  </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>データのバラつきを調べる標準偏差</h2>
+                    <p class="fragment">ざっくりいうと<b>平均からのズレ</b>を表す指標</p>
+                  </section>
+                  <section>
+                    <h2>特徴</h2>
+                    <p class="fragment">最小値は0となり・・・</p>
+                    <p class="fragment">バラつきが大きければ、標準偏差の値も大きくなる</p>
+                  </section>
+                  <section>
+                    <h2>公式</h2>
+                    <img src="http://www.okasan-online.co.jp/ont/use/stepup/tec_basic/img/tec_basic_03_img01.gif" alt="">
+                    <p class="fragment">なるほど？？？</p>
+                  </section>
+                  <section>
+                    <h2>とりあえずやってみるだ</h2>
+                    <p class="fragment">A、Bクラスのそれぞれのテストの結果はしたのとおりでした。どっちの方がバラつきは少なかったでしょうか？？？</p>
+                    <table class="fragment">
+                      <th>A</th>
+                      <td>87</td>
+                      <td>56</td>
+                      <td>34</td>
+                      <td>78</td>
+                      <td>71</td>
+                      <td>92</td>
+                      <td>59</td>
+                      <td>43</td>
+                      <td>62</td>
+                      <td>38</td>
+                    </table>
+                    <table class="fragment">
+                      <th>B</th>
+                      <td>45</td>
+                      <td>81</td>
+                      <td>96</td>
+                      <td>91</td>
+                      <td>73</td>
+                      <td>87</td>
+                      <td>35</td>
+                      <td>79</td>
+                      <td>22</td>
+                      <td>38</td>
+                    </table>
+                  </section>
+                  <section>
+                    <h2>計算方法</h2>
+                    <p>まずA、Bともに平均を出します。そして後は愚直に計算！！！</p>
+                    <p>Aの平均；62</p>
+                    <p>Bの平均；64.7</p>
+                    <p class="fragment">Aの標準偏差：19.04</p>
+                    <p class="fragment">Bの標準偏差：25.52<br>となるはず！</p>
+                  </section>
+                </section>
+                <section>
+                  <section>
+                      <h2>小ネタ</h2>
+                  </section>
+                  <section>
+                      <h2>グラフの使い方</h2>
+                      <p class="fragment">数字を見せる時いい感じにグラフを利用しますが、<br>各グラフの特徴に合わせて使いましょう！</p>
+                  </section>
+                  <section>
+                      <h2>棒グラフ</h2>
+                      <img src="https://cdn3.iconfinder.com/data/icons/forall/110/chart-128.png" alt="">
+                      <p class="fragment">大小を表す</p>
+                  </section>
+                  <section>
+                      <h2>折れ線グラフ</h2>
+                      <img src="https://cdn0.iconfinder.com/data/icons/free-misc-icon-set-2/512/line_graph_up-128.png" alt="">
+                      <p class="fragment">変化を表す</p>
+                  </section>
+                  <section>
+                      <h2>円グラフ</h2>
+                      <img src="https://cdn4.iconfinder.com/data/icons/simplicio/128x128/piechart.png" alt="">
+                      <p class="fragment">割合を表す</p>
+                  </section>
+                  <section>
+                      <h2>帯グラフ</h2>
+                      <img src="http://www.stat.go.jp/naruhodo/img/c1/c1graph/img_04a.jpg" alt="">
+                      <p class="fragment">割合を比べる</p>
+                  </section>
+                </section>
+                <section>
+                  <h2>第1回は終わり！</h2>
+                  <p>次回はヒストグラム、相関関係、正規分布とかまでいければ・・・</p>
+                </section>
+		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

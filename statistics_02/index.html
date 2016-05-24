@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>統計学の初歩の初歩の初歩に入門してみた その2</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+                <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+                <div class="slides">
+
+                <section data-background="">
+                    <h1>統計学を学び始めた<br>その2</h1>
+                    <h3>株式会社LIG</h3>
+                    <h4><small><a href="http://liginc.co.jp/member/member_detail?user=tomoki" target="_blank">Tomoki Komatsu</a></small></h4>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>本日のお題</h2>
+                    <ul>
+                        <li class="fragment">度数分布表</li>
+                        <li class="fragment">ヒストグラム</li>
+                        <li class="fragment">偏差値</li>
+                    </ul>
+                  </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>度数分布表とは</h2>
+                    <p class="fragment">各階級ごとに度数、相対度数、累積相対度数などをまとめた表のこと</p>
+                  </section>
+                  <section>
+                    <p class="fragment">ほう・・・？？？</p>
+                  </section>
+                  <section>
+                    <h2>まずは単語の意味から</h2>
+                    <ul class="fragment">
+                        <li class="fragment">階級</li>
+                        <p class="fragment">データをいくつかの等しい幅にわけた<b>区間</b></p>
+                        <li class="fragment">階級値</li>
+                        <p class="fragment">各階級の中央値</p>
+                        <li class="fragment">度数</li>
+                        <p class="fragment">それぞれの階級に入るデータの数</p>
+                        <li class="fragment">相対度数</li>
+                        <p class="fragment">度数の総数に対しての各階級の度数の割合</p>
+                        <li class="fragment">累積相対度数</li>
+                        <p class="fragment">その階級以下の相対度数の合計</p>
+                    </ul>
+                  </section>
+
+                  <section>
+                      <h2>練習してみるぞい</h2>
+                      <p>ラーメン屋が10店舗ありました</p>
+                      <table>
+                        <tr>
+                          <th>ID</th>
+                          <th>ラーメンの価格</th>
+                        </tr>
+                        <tr>
+                          <td>A</td>
+                          <td>700円</td>
+                        </tr>
+                        <tr>
+                          <td>B</td>
+                          <td>700円</td>
+                        </tr>
+                        <tr>
+                          <td>C</td>
+                          <td>750円</td>
+                        </tr>
+                        <tr>
+                          <td>D</td>
+                          <td>780円</td>
+                        </tr>
+                        <tr>
+                          <td>E</td>
+                          <td>790円</td>
+                        </tr>
+                        <tr>
+                          <td>F</td>
+                          <td>820円</td>
+                        </tr>
+                        <tr>
+                          <td>G</td>
+                          <td>880円</td>
+                        </tr>
+                        <tr>
+                          <td>H</td>
+                          <td>910円</td>
+                        </tr>
+                        <tr>
+                          <td>I</td>
+                          <td>930円</td>
+                        </tr>
+                        <tr>
+                          <td>J</td>
+                          <td>980円</td>
+                        </tr>
+                      </table>
+                      <p class="fragment">これを度数分布表にまとめていきます。</p>
+                </section>
+                <section>
+                    <h2>まずは階級</h2>
+                    <p class="fragment">等しい幅にわけた<b>区間</b>なので価格帯をグルーピングしていきましょう。</p>
+                    <p class="fragment">こんな具合に価格の100円刻みで</p>
+                    <ul class="fragment">
+                      <li class="fragment">階級A：700〜800円</li>
+                      <li class="fragment">階級B：801〜900円</li>
+                      <li class="fragment">階級C：901〜1,000円</li>
+                    </ul>
+                </section>
+                <section>
+                  <h2>度数</h2>
+                  <p class="fragment">各階級に属したデータの個数なので…</p>
+                    <ul class="fragment">
+                      <li class="fragment">階級A：5</li>
+                      <li class="fragment">階級B：3</li>
+                      <li class="fragment">階級C：2</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>次は階級値</h2>
+                    <p class="fragment">階級の中央値なので…</p>
+                    <ul class="fragment">
+                      <li class="fragment">750円</li>
+                      <li class="fragment">850円</li>
+                      <li class="fragment">950円</li>
+                    </ul>
+                    <p class="fragment">となります</p>
+                </section>
+                <section>
+                    <h2>そして相対度数</h2>
+                    <p class="fragment">度数の総数に対しての各階級の度数の割合</p>
+                    <p class="fragment">度数の総数は10なので</p>
+                    <ul class="fragment">
+                      <li class="fragment">階級A：5 / 10 → 0.5</li>
+                      <li class="fragment">階級B：3 / 10 → 0.3</li>
+                      <li class="fragment">階級C：2/ 10 → 0.2</li>
+                    </ul>
+                    <p class="fragment">となります</p>
+                </section>
+                <section>
+                  <h2>ここいらで一度表にしてみると</h2>
+                  <table>
+                      <tr>
+                        <th>階級</th>
+                        <th>度数</th>
+                        <th>相対度数</th>
+                        <th>累積相対度数</th>
+                      </tr>
+                      <tr>
+                          <td>700〜800</td>
+                          <td>5</td>
+                          <td>0.5</td>
+                          <td>0.5</td>
+                      </tr>
+                      <tr>
+                          <td>801〜900</td>
+                          <td>3</td>
+                          <td>0.3</td>
+                          <td>0.8</td>
+                      </tr>
+                      <tr>
+                          <td>901〜1000</td>
+                          <td>2</td>
+                          <td>0.2</td>
+                          <td>1.0</td>
+                      </tr>
+                  </table>
+                </section>
+
+                <section>
+                  <h2>累積相対度数は？？？</h2>
+                  <p class="fragment">その階級以下の相対度数の合計…なので<br>
+                  一度、表にまとめてから計算すると楽かもです。</p>
+                </section>
+
+                <section>
+                  <h2>なんで度数分布表をつくるのだろう？？？</h2>
+                  <p class="fragment">データのグルーピングをするためかなと考えます。<br>
+                  大まかな状況を把握することができると思います。</p>
+                </section>
+                <section>
+                  <h2>ちなみに…</h2>
+                  <p class="fragment">階級の幅の決め方は規格があります。今回はサンプルが少ないのでまあ良いかという感じでした。</p>
+                  <h3 class="fragment">JIS規格</h3>
+                  <p class="fragment">最小値と最大値を含む級を5〜20の等間隔の級に分けるように区間の幅を決める。<br>
+                  旧幅はR(範囲)を1, 2, 5(または10, 20, 50など)で除し、その値が5〜20になるものを選ぶ。これが二通りになった時はサンプルの大きさが100以上の場合は級幅の<b>小さい方</b>を、99以下の場合は級幅の大きい方を用いる</p>
+                </section>
+
+                <section>
+                  <h2>まとめると</h2>
+                  <ul class="fragment">
+                      <li class="fragment">階級の幅は1, 2, 5, 10とかキリの良いのにしよう</li>
+                      <li class="fragment">階級数は5〜20くらいに収めよう</li>
+                  </ul>
+                  <p class="fragment">今回やってみたやつだと、階級数は足りない、幅はおｋという感じ</p>
+                </section>
+              </section>
+
+                <section>
+                  <section>
+                    <h2>ヒストグラム</h2>
+                  </section>
+
+                  <section>
+                    <h3 class="fragment">ヒストグラムとは</h3>
+                    <p class="fragment">ざっくり言うと先ほどの度数分布表を棒グラフにしたもの</p>
+                    <img src="http://www.ikpi.co.jp/img/histogram.jpg" alt="" class="fragment">
+                    <p class="fragment">こんなの</p>
+                  </section>
+
+                  <section>
+                    <h2>作り方</h2>
+                    <p class="fragment">階級をx軸</p>
+                    <p class="fragment">度数をy軸</p>
+                    <p class="fragment">棒グラフは隣同士くっつけます</p>
+                  </section>
+
+                  <section>
+                    <h2>ではでは度数分布表からヒストグラムをつくりませう</h2>
+                  <table>
+                      <tr>
+                        <th>階級</th>
+                        <th>度数</th>
+                        <th>相対度数</th>
+                        <th>累積相対度数</th>
+                      </tr>
+                      <tr>
+                          <td>700〜800</td>
+                          <td>5</td>
+                          <td>0.5</td>
+                          <td>0.5</td>
+                      </tr>
+                      <tr>
+                          <td>801〜900</td>
+                          <td>3</td>
+                          <td>0.3</td>
+                          <td>0.8</td>
+                      </tr>
+                      <tr>
+                          <td>901〜1000</td>
+                          <td>2</td>
+                          <td>0.2</td>
+                          <td>1.0</td>
+                      </tr>
+                  </table>
+                  </section>
+
+                  <section>
+                    <h2>なぜヒストグラムをつくるのだろう？？？</h2>
+                    <p class="fragment">度数分布表を視覚的にも把握しやすいようにでした<br>
+                    そもそもグラフなので直感的にわかるようにするためにつくるのです。</p>
+                  </section>
+                </section>
+
+                <section>
+                  <section>
+                    <h2>偏差値</h2>
+                    <p class="fragment">みんな学生時代に戦った偏差値</p>
+                  </section>
+                  <section>
+                    <h2>そもそも偏差値とは？？？</h2>
+                    <p class="fragment">データ全体の中で特定のデータがどれだけ<b>特殊</b>であるかを測る指標</p>
+                  </section>
+                  <section>
+                    <h2>公式</h2>
+                    <img src="http://imgcp.aacdn.jp/img-a/auto/auto/aa/gm/article/6/6/1/6/4/hensachimotomekata.jpg" alt="">
+                  </section>
+                  <section>
+                    <p class="fragment">おっ！計算できそう！</p>
+                    <p class="fragment">覚えてますか標準偏差？？？</p>
+                  </section>
+
+                  <section>
+                    <h2>前回のものをベースに偏差値を出してみよう</h2>
+                    <p>抜粋</p>
+                    <p class="fragment">Cくんの数学と社会の偏差値を出してみてください</p>
+                    <table class="fragment">
+                      <tr>
+                          <td></td>
+                          <td>A</td>
+                          <td>B</td>
+                          <td>C</td>
+                          <td>D</td>
+                          <td>E</td>
+                          <td>F</td>
+                          <td>G</td>
+                          <td>H</td>
+                          <td>I</td>
+                          <td>J</td>
+                      </tr>
+                      <tr>
+                        <th>数学</th>
+                        <td>87</td>
+                        <td>56</td>
+                        <td>34</td>
+                        <td>78</td>
+                        <td>71</td>
+                        <td>92</td>
+                        <td>59</td>
+                        <td>43</td>
+                        <td>62</td>
+                        <td>38</td>
+                      </tr>
+                    </table>
+                    <table class="fragment">
+                      <tr>
+                        <th>社会</th>
+                        <td>45</td>
+                        <td>81</td>
+                        <td>96</td>
+                        <td>91</td>
+                        <td>73</td>
+                        <td>87</td>
+                        <td>35</td>
+                        <td>79</td>
+                        <td>22</td>
+                        <td>38</td>
+                      </tr>
+                    </table>
+                  </section>
+
+                  <section>
+                    <h2 class="fragment">必要な情報をまとめる数学ver.</h2>
+                    <p class="fragment">Cくんの点数：34</p>
+                    <p class="fragment">平均点：62</p>
+                    <p class="fragment">標準偏差：19.04</p>
+                    <h2 class="fragment">必要な情報をまとめる社会ver.</h2>
+                    <p class="fragment">Cくんの点数：96</p>
+                    <p class="fragment">平均点：64.7</p>
+                    <p class="fragment">標準偏差：25.52</p>
+                    <h3 class="fragment">さあ計算の時間</h3>
+                  </section>
+
+                  <section>
+                    <h2 class="fragment">数学の偏差値</h2>
+                    <p class="fragment">35.2</p>
+                    <h2 class="fragment">社会の偏差値</h2>
+                    <p class="fragment">72.6</p>
+                  </section>
+
+                  <section>
+                    <h4>数学もっとがんばろうね</h4>
+                  </section>
+                  </section>
+                </section>
+
+                <section data-background="http://i.giphy.com/3o6Mbnll2gudglC3HG.gif">
+                  <h2>第2回おわり</h2>
+                  <p>次回は</p>
+                </section>
+                <section>
+                    <h2>参考</h2>
+                    <ul>
+                        <li><a href="http://www.amazon.co.jp/%E3%83%9E%E3%83%B3%E3%82%AC%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B%E7%B5%B1%E8%A8%88%E5%AD%A6-%E9%AB%98%E6%A9%8B-%E4%BF%A1/dp/4274065707" target="_blank">マンガでわかる統計学</a></li>
+                        <li><a href="http://www.amazon.co.jp/%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E6%95%B0%E5%AD%A6%E6%95%99%E5%AE%A4-%E6%B0%B8%E9%87%8E%E8%A3%95%E4%B9%8B-ebook/dp/B015DK2OFA/ref=sr_1_1?s=books&ie=UTF8&qid=1461728827&sr=1-1&keywords=%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%80%80%E6%95%B0%E5%AD%A6" target="_blank">統計学のための数学教室</a></li>
+                    </ul>
+                </section>
+
+                <section style="text-align: left;">
+                        <h1>おわり</h1>
+                        <p>
+                                - <a href="http://slides.com">Try the online editor</a> <br>
+                                - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+                        </p>
+                </section>
+		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
