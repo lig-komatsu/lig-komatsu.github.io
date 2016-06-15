@@ -189,9 +189,6 @@ body {
 .reveal table td[align="right"] {
   text-align: right; }
 
-.reveal table tr:last-child td {
-  border-bottom: none; }
-
 .reveal sup {
   vertical-align: super; }
 
