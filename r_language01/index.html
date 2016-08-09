@@ -2,8 +2,8 @@
 <html lang="ja">
 	<head>
 		<meta charset="utf-8">
-		<title>統計学の初歩の初歩の初歩に入門してみた その3</title>
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<title>R言語をはじめてみた その1</title>
+		<meta name="description" content="R言語をはじめてみたので初歩の初歩をご紹介">
 		<meta name="author" content="Hakim El Hattab">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -55,7 +55,7 @@
                     <section>
                         <h2>なぜRか</h2>
                         <p class="fragment">統計に特化した言語</p>
-                        <p class="fragment"><code>python</code>もデータ分析に用いられているけど…</p>
+                        <p class="fragment"><b>python</b>もデータ分析に用いられているけど…</p>
                         <p class="fragment">初心者だからR言語にしたよ！</p>
                     </section>
                 </section>
@@ -94,114 +94,53 @@
                     <section>
                         <h2>関数</h2>
                         <p class="fragment">目的別にいっぱあい用意されている</p>
-                        <p class="fragment">例えばCSVファイルを読み込む<code>read.csv("ファイル名")</code></p>
+                        <p class="fragment">例えばCSVファイルを読み込む</p>
+                        <p class="fragment"><code>read.csv("ファイル名")</code></p>
+                        <p class="fragment">これでcsvファイルにあるデータをRで加工することが可能になったりします</p>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>閑話休題</h2>
+                        <h2>データをいじってみる</h2>
                     </section>
                     <section>
-                        <p>みなさん</p>
-                        <p class="fragment">どれくらいショートカット使ってますか？？？</p>
-                        <p class="fragment">ぼくはショートカットが大好きマンです</p>
+                        <h2>まずはCSVファイルの読み込み</h2>
+                        <p class="fragment"><code>read.csv("file_name")</code></p>
+                        <p class="fragment">これでCSVファイルを読み込みます。</p>
+                        <p class="fragment"><code>x = read.csv("./classData.csv")</code></p>
                     </section>
                     <section>
-                        <p>なので</p>
-                        <p class="fragment">よく使うショートカットを紹介して、終わろうと思います。</p>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Gmail</h2>
-                        <p class="fragment">既知のことかもですがGmailのおすすめショートカット</p>
+                        <h2>マルチバイト問題</h2>
+                        <p class="fragment">日本語を使ったCSVファイルだと正しく読み込めないことがあります。</p>
+                        <p class="fragment">その場合、第二引数に<code>fileEncoding = "cp932"</code>を指定すればおｋれす</p>
+                        <p class="fragment"><code>x = read.csv("./classData.csv", fileEncoding = "co932")</code></p>
                     </section>
                     <section>
-                        <h3>上下移動</h3>
-                        <p class="fragment">上：k</p>
-                        <p class="fragment">下：j</p>
-                        <p class="fragment">そう…Vimと一緒</p>
+                        <h2>列を指定する</h2>
+                        <p class="fragment"><code>オブジェクト名$列名</code></p>
                     </section>
                     <section>
-                        <h3>全員へ返信</h3>
-                        <p class="fragment">a</p>
+                        <h2></h2>
                     </section>
                     <section>
-                        <h3>受信ボックス一覧</h3>
-                        <p class="fragment">g → i</p>
-                    </section>
+                        <h2>平均値を出す</h2>
+                        <p class="fragment"><code>mean(x$Mathematics)</code></p>
                     <section>
-                        <h3>検索窓にフォーカス</h3>
-                        <p class="fragment">/</p>
+                        <h2>中央値を出す</h2>
+                        <p class="fragment"><code>median(x$Mathematics)</code></p>
                     </section>
-                    <section>
-                        <h3>全選択</h3>
-                        <p class="fragment">* → a</p>
-                    </section>
-                    <section>
-                        <h3>全選択解除</h3>
-                        <p class="fragment">* → n</p>
-                    </section>
-                    <section>
-                        <h3>削除</h3>
-                        <p class="fragment">#</p>
-                    </section>
-                    <section>
-                        <h3>応用：全メール削除</h3>
-                        <p class="fragment">* → a → #</p>
-                    </section>
-                    <section>
-                        <h3>ちなみに</h3>
-                        <p class="fragment">Googleの検索結果画面でも同じようなショートカットが使えます。</p>
-                    </section>
-                    <section>
-                        <h3>ぼくがよく使うのは</h3>
-                        <p class="fragment">検索窓にフォーカス： <b>/</b></p>
-                        <p class="fragment">上下移動： <b>j, k</b></p>
-                        <p class="fragment">ページを開く： <b>Enter</b></p>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Bitbucket</h2>
-                        <p class="fragment">Bitbucketにもショートカットが用意されています</p>
-                    </section>
-                    <section>
-                        <h3>issue一覧へ</h3>
-                        <p class="fragment">r → i</p>
-                    </section>
-                    <section>
-                        <h3>issue新規登録</h3>
-                        <p class="fragment">x → i</p>
-                    </section>
-                    <section>
-                        <h3>issue一覧での移動</h3>
-                        <p class="fragment">上：k</p>
-                        <p class="fragment">下：j</p>
-                        <p class="fragment">そう…Vimと一緒</p>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>おすすめアプリ</h2>
-                        <p class="fragment"><a href="https://www.spectacleapp.com/">spectacleapp</a></p>
-                        <p class="fragment">ウィンドウを瞬時に移動させることができます</p>
                     </section>
                 </section>
 
                 <section data-background="http://i.giphy.com/3o6gE99DHZsbxMzkSk.gif">
-                  <h2>第3回おわり</h2>
-                  <p>次回は散分図、相関係数にいきたいところ…(これから小松もやるところだよ)</p>
+                  <h2>第1回R言語おわり</h2>
+                  <p></p>
                 </section>
                 <section>
                     <h2>参考</h2>
                     <ul>
-                        <li><a href="http://www.amazon.co.jp/%E3%83%9E%E3%83%B3%E3%82%AC%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B%E7%B5%B1%E8%A8%88%E5%AD%A6-%E9%AB%98%E6%A9%8B-%E4%BF%A1/dp/4274065707" target="_blank">マンガでわかる統計学</a></li>
-                        <li><a href="http://www.amazon.co.jp/%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E6%95%B0%E5%AD%A6%E6%95%99%E5%AE%A4-%E6%B0%B8%E9%87%8E%E8%A3%95%E4%B9%8B-ebook/dp/B015DK2OFA/ref=sr_1_1?s=books&ie=UTF8&qid=1461728827&sr=1-1&keywords=%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%80%80%E6%95%B0%E5%AD%A6" target="_blank">統計学のための数学教室</a></li>
+                        <li><a href="https://www.udemy.com/r-datascience/">https://www.udemy.com/r-datascience/</a></li>
                     </ul>
                 </section>
 
