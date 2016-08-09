@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>統計学の初歩の初歩の初歩に入門してみた その3</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+        <link rel="stylesheet" href="../common/css/reveal.css">
+                <link rel="stylesheet" href="../common/css/theme/sky.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../common/lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../commoncss/print/pdf.css' : '../common/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="../common/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+                <div class="slides">
+
+                <section data-background="">
+                    <h1>R言語のコトハジメ<br>その1</h1>
+                    <h3>株式会社LIG</h3>
+                    <h4><a href="http://liginc.co.jp/member/member_detail?user=tomoki" target="_blank">Tomoki Komatsu</a></h4>
+                </section>
+
+                <section>
+                    <h2>本日のお話</h2>
+                    <ul>
+                    <li class="fragment">R言語とは</li>
+                    <li class="fragment">インストール</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>R言語とは</h2>
+                        <ul class="fragment">
+                        <li class="fragment">統計解析向けのプログラミング言語</li>
+                        <li class="fragment"></li>
+                        <li class="fragment"></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>なぜRか</h2>
+                        <p class="fragment">統計に特化した言語</p>
+                        <p class="fragment"><code>python</code>もデータ分析に用いられているけど…</p>
+                        <p class="fragment">初心者だからR言語にしたよ！</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>インストール</h2>
+                    </section>
+                    <section>
+                        <h2>公式からDL</h2>
+                        <p><a href="https://cran.ism.ac.jp/">https://cran.ism.ac.jp/</a></p>
+                    </section>
+                    <section>
+                        <h2>R Studio(IDE)もインストール</h2>
+                        <p><a href="https://www.rstudio.com/products/rstudio/download2/">https://www.rstudio.com/products/rstudio/download2/</a></p>
+                        <p>R StudioはR言語に特化したIDEだよ！</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Rのお作法</h2>
+                    </section>
+                    <section>
+                        <h2>オブジェクト</h2>
+                        <p class="fragment">Rで使うデータをオブジェクトと呼びます</p>
+                    </section>
+                    <section>
+                        <h2>代入</h2>
+                        <p class="fragment"><code>hoge &lt;- 10</code></p>
+                        <p class="fragment">みたいな感じです</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>関数</h2>
+                        <p class="fragment">目的別にいっぱあい用意されている</p>
+                        <p class="fragment">例えばCSVファイルを読み込む<code>read.csv("ファイル名")</code></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>閑話休題</h2>
+                    </section>
+                    <section>
+                        <p>みなさん</p>
+                        <p class="fragment">どれくらいショートカット使ってますか？？？</p>
+                        <p class="fragment">ぼくはショートカットが大好きマンです</p>
+                    </section>
+                    <section>
+                        <p>なので</p>
+                        <p class="fragment">よく使うショートカットを紹介して、終わろうと思います。</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Gmail</h2>
+                        <p class="fragment">既知のことかもですがGmailのおすすめショートカット</p>
+                    </section>
+                    <section>
+                        <h3>上下移動</h3>
+                        <p class="fragment">上：k</p>
+                        <p class="fragment">下：j</p>
+                        <p class="fragment">そう…Vimと一緒</p>
+                    </section>
+                    <section>
+                        <h3>全員へ返信</h3>
+                        <p class="fragment">a</p>
+                    </section>
+                    <section>
+                        <h3>受信ボックス一覧</h3>
+                        <p class="fragment">g → i</p>
+                    </section>
+                    <section>
+                        <h3>検索窓にフォーカス</h3>
+                        <p class="fragment">/</p>
+                    </section>
+                    <section>
+                        <h3>全選択</h3>
+                        <p class="fragment">* → a</p>
+                    </section>
+                    <section>
+                        <h3>全選択解除</h3>
+                        <p class="fragment">* → n</p>
+                    </section>
+                    <section>
+                        <h3>削除</h3>
+                        <p class="fragment">#</p>
+                    </section>
+                    <section>
+                        <h3>応用：全メール削除</h3>
+                        <p class="fragment">* → a → #</p>
+                    </section>
+                    <section>
+                        <h3>ちなみに</h3>
+                        <p class="fragment">Googleの検索結果画面でも同じようなショートカットが使えます。</p>
+                    </section>
+                    <section>
+                        <h3>ぼくがよく使うのは</h3>
+                        <p class="fragment">検索窓にフォーカス： <b>/</b></p>
+                        <p class="fragment">上下移動： <b>j, k</b></p>
+                        <p class="fragment">ページを開く： <b>Enter</b></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Bitbucket</h2>
+                        <p class="fragment">Bitbucketにもショートカットが用意されています</p>
+                    </section>
+                    <section>
+                        <h3>issue一覧へ</h3>
+                        <p class="fragment">r → i</p>
+                    </section>
+                    <section>
+                        <h3>issue新規登録</h3>
+                        <p class="fragment">x → i</p>
+                    </section>
+                    <section>
+                        <h3>issue一覧での移動</h3>
+                        <p class="fragment">上：k</p>
+                        <p class="fragment">下：j</p>
+                        <p class="fragment">そう…Vimと一緒</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>おすすめアプリ</h2>
+                        <p class="fragment"><a href="https://www.spectacleapp.com/">spectacleapp</a></p>
+                        <p class="fragment">ウィンドウを瞬時に移動させることができます</p>
+                    </section>
+                </section>
+
+                <section data-background="http://i.giphy.com/3o6gE99DHZsbxMzkSk.gif">
+                  <h2>第3回おわり</h2>
+                  <p>次回は散分図、相関係数にいきたいところ…(これから小松もやるところだよ)</p>
+                </section>
+                <section>
+                    <h2>参考</h2>
+                    <ul>
+                        <li><a href="http://www.amazon.co.jp/%E3%83%9E%E3%83%B3%E3%82%AC%E3%81%A7%E3%82%8F%E3%81%8B%E3%82%8B%E7%B5%B1%E8%A8%88%E5%AD%A6-%E9%AB%98%E6%A9%8B-%E4%BF%A1/dp/4274065707" target="_blank">マンガでわかる統計学</a></li>
+                        <li><a href="http://www.amazon.co.jp/%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E6%95%B0%E5%AD%A6%E6%95%99%E5%AE%A4-%E6%B0%B8%E9%87%8E%E8%A3%95%E4%B9%8B-ebook/dp/B015DK2OFA/ref=sr_1_1?s=books&ie=UTF8&qid=1461728827&sr=1-1&keywords=%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%80%80%E6%95%B0%E5%AD%A6" target="_blank">統計学のための数学教室</a></li>
+                    </ul>
+                </section>
+
+                <section style="text-align: left;">
+                        <h1>おわり</h1>
+                        <p>
+                                - <a href="http://slides.com">Try the online editor</a> <br>
+                                - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+                        </p>
+                </section>
+		</div>
+		</div>
+
+		<script src="../common/lib/js/head.min.js"></script>
+		<script src="../common/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
