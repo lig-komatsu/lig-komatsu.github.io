@@ -40,6 +40,7 @@
                     <ul>
                     <li class="fragment">R言語とは</li>
                     <li class="fragment">インストール</li>
+                    <li class="fragment">Rで加工してみる</li>
                     </ul>
                 </section>
 
@@ -88,6 +89,11 @@
                         <p class="fragment"><code>hoge &lt;- 10</code></p>
                         <p class="fragment">みたいな感じです</p>
                     </section>
+                    <section>
+                        <h2>ベクトル</h2>
+                        <p class="fragment">複数の数字を1つにまとめたもので、ぼくは配列と同じ感じと理解しています</p>
+                        <p class="fragment"><code>x &lt;- c(10, 14, 23)</code></p>
+                    </section>
                 </section>
 
                 <section>
@@ -98,14 +104,8 @@
                         <p class="fragment"><code>read.csv("ファイル名")</code></p>
                         <p class="fragment">これでcsvファイルにあるデータをRで加工することが可能になったりします</p>
                     </section>
-                </section>
-
-                <section>
                     <section>
-                        <h2>データをいじってみる</h2>
-                    </section>
-                    <section>
-                        <h2>まずはCSVファイルの読み込み</h2>
+                        <h2>CSVファイルの読み込み</h2>
                         <p class="fragment"><code>read.csv("file_name")</code></p>
                         <p class="fragment">これでCSVファイルを読み込みます。</p>
                         <p class="fragment"><code>x = read.csv("./classData.csv")</code></p>
@@ -119,23 +119,74 @@
                     <section>
                         <h2>列を指定する</h2>
                         <p class="fragment"><code>オブジェクト名$列名</code></p>
-                    </section>
-                    <section>
-                        <h2></h2>
+                        <p class="fragment">さっき読み込んだCSVからenglishの列を抜き出すのは…</p>
+                        <p class="fragment"><code>x$english</code></p>
                     </section>
                     <section>
                         <h2>平均値を出す</h2>
-                        <p class="fragment"><code>mean(x$Mathematics)</code></p>
+                        <p class="fragment">mean関数</p>
+                        <p class="fragment"><code>mean(x$english)</code></p>
+                    </section>
                     <section>
                         <h2>中央値を出す</h2>
-                        <p class="fragment"><code>median(x$Mathematics)</code></p>
+                        <p class="fragment">median関数</p>
+                        <p class="fragment"><code>median(x$english)</code></p>
                     </section>
+                    <section>
+                        <h2>Excelの関数みたいですね</h2>
+                        <p class="fragment">そこがノンプログラマーにはとっつきやすいのかも</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>実際にデータをいじってみる</h2>
+                        <p><a href="./data01.csv">練習用CSVファイル</a></p>
+                    </section>
+                    <section>
+                        <h2>下準備</h2>
+                        <ul>
+                            <li>適当なディレクトリを作成する</li>
+                            <li>その中にcsvファイルを格納する</li>
+                            <li>ターミナルでrコマンドを実行</li>
+                            <li>※RStudioでやるのは冗長になるのでターミナルでやるます！</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>まずはCSVファイルを読み込む</h2>
+                        <p class="fragment"><code>x &lt;- read.csv("data01.csv")</code></p>
+                        <p class="fragment"><code>x</code>を実行するとデータが羅列するはず</p>
+                    </section>
+                    <section>
+                        <h2>英語の平均値を出してみる</h2>
+                        <p class="fragment"><code>mean(x$英語)</code></p>
+                        <p class="fragment"><b>62</b>が返ってくるはず</p>
+                    </section>
+                    <section>
+                        <h2>英語の中央値を出してみる</h2>
+                        <p class="fragment"><code>median(x$英語)</code></p>
+                        <p class="fragment"><b>68</b>が返ってくるはず</p>
+                    </section>
+                    <section>
+                        <h2>標準偏差を出す</h2>
+                        <p class="fragment">ためには手続きが必要です</p>
+                        <ol>
+                            <li class="fragment">分散を求める</li>
+                            <li class="fragment">分散の平方根をもとめる</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>分散を求める</h2>
+                        <p class="fragment"><code>var(x$english)</code></p>
+                    </section>
+                    <section>
+                        <h2>分散の平方根を求める</h2>
+                        <p class="fragment"><code>sqrt(var(x$english))</code></p>
                     </section>
                 </section>
 
                 <section data-background="http://i.giphy.com/3o6gE99DHZsbxMzkSk.gif">
                   <h2>第1回R言語おわり</h2>
-                  <p></p>
                 </section>
                 <section>
                     <h2>参考</h2>
