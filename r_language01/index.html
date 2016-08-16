@@ -48,9 +48,8 @@
                     <section>
                         <h2>R言語とは</h2>
                         <ul class="fragment">
-                        <li class="fragment">統計解析向けのプログラミング言語</li>
-                        <li class="fragment"></li>
-                        <li class="fragment"></li>
+                            <li class="fragment">統計解析向けのプログラミング言語</li>
+                            <li class="fragment">グラフ化することができたり</li>
                         </ul>
                     </section>
                     <section>
@@ -73,6 +72,9 @@
                         <h2>R Studio(IDE)もインストール</h2>
                         <p><a href="https://www.rstudio.com/products/rstudio/download2/">https://www.rstudio.com/products/rstudio/download2/</a></p>
                         <p>R StudioはR言語に特化したIDEだよ！</p>
+                    </section>
+                    <section>
+                        <p>ぼくはHomebrewでいれましたけども…</p>
                     </section>
                 </section>
 
@@ -136,6 +138,24 @@
                         <h2>Excelの関数みたいですね</h2>
                         <p class="fragment">そこがノンプログラマーにはとっつきやすいのかも</p>
                     </section>
+                    <section>
+                        <h2>ちょっとステップアップ</h2>
+                    </section>
+                    <section>
+                        <h2>各列の平均を出す</h2>
+                        <p class="fragment">csvファイルの各列を指定して平均出すの面倒…</p>
+                        <p class="fragment">そこで…colMeans関数</p>
+                        <p class="fragment"><code>colMeans(x[, -c(1, 2)])</code></p>
+                    </section>
+                    <section>
+                        <p>ちょっと複雑になりましたね</p>
+                        <p class="fragment">分解してみます</p>
+                        <p class="fragment">引数でオブジェクトを指定</p>
+                        <p class="fragment"><code>[]</code>でオブジェクトの列、行の位置を指定</p>
+                        <p class="fragment"><code>[, -c(1, 2)]</code>前半が<b>行</b>、後半が<b>列</b></p>
+                        <p class="fragment">行を空にする事で<b>すべて</b>という意味に</p>
+                        <p class="fragment"><code>-c(1, 2)</code>で列の1, 2行目を除外としている</p>
+                    </section>
                 </section>
 
                 <section>
@@ -168,6 +188,10 @@
                         <p class="fragment"><b>68</b>が返ってくるはず</p>
                     </section>
                     <section>
+                        <h2>各教科の平均を出してみる</h2>
+                        <p class="fragment"></p>
+                    </section>
+                    <section>
                         <h2>標準偏差を出す</h2>
                         <p class="fragment">ためには手続きが必要です</p>
                         <ol>
@@ -182,6 +206,24 @@
                     <section>
                         <h2>分散の平方根を求める</h2>
                         <p class="fragment"><code>sqrt(var(x$english))</code></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Rを使う場面を考えてみる</h2>
+                        <ol>
+                            <li class="fragment">GAの値をスプレッドシートに吐き出す(プラグイン)</li>
+                            <li class="fragment">Rで1を取得してゴニョゴニョする</li>
+                            <li class="fragment">2はAPIがあれば利用したいやつ(調べ中)</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h2>例えば…</h2>
+                        <p>ディレクター連載の<a href="">GA</a>をスプレッドシートに書きだして</p>
+                        <p>CSVファイルにして</p>
+                        <p>Rで読み込む</p>
                     </section>
                 </section>
 
