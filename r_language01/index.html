@@ -169,7 +169,7 @@
                             <li>適当なディレクトリを作成する</li>
                             <li>その中にcsvファイルを格納する</li>
                             <li>ターミナルでrコマンドを実行</li>
-                            <li>※RStudioでやるのは冗長になるのでターミナルでやるます！</li>
+                            <li>※ターミナルでやるます！</li>
                         </ul>
                     </section>
                     <section>
@@ -179,29 +179,28 @@
                     </section>
                     <section>
                         <h2>英語の平均値を出してみる</h2>
-                        <p class="fragment"><code>mean(x$英語)</code></p>
+                        <p class="fragment"><code>mean(x$english)</code></p>
                         <p class="fragment"><b>62</b>が返ってくるはず</p>
                     </section>
                     <section>
                         <h2>英語の中央値を出してみる</h2>
-                        <p class="fragment"><code>median(x$英語)</code></p>
+                        <p class="fragment"><code>median(x$english)</code></p>
                         <p class="fragment"><b>68</b>が返ってくるはず</p>
                     </section>
                     <section>
                         <h2>各教科の平均を出してみる</h2>
-                        <p class="fragment"></p>
+                        <p class="fragment"><code>colMeans(x[, -c(1, 2)])</code></p>
+                        <p class="fragment">いろいろ返ってくるはず</p>
                     </section>
                     <section>
                         <h2>標準偏差を出す</h2>
-                        <p class="fragment">ためには手続きが必要です</p>
-                        <ol>
-                            <li class="fragment">分散を求める</li>
-                            <li class="fragment">分散の平方根をもとめる</li>
-                        </ol>
+                            <p class="fragment">sd()</p>
+                            <p class="fragment">分散の平方根をもとめる</p>
                     </section>
                     <section>
-                        <h2>分散を求める</h2>
-                        <p class="fragment"><code>var(x$english)</code></p>
+                        <h2>ヒストグラムをつくってみる</h2>
+                        <p class="fragment"><code>hist(x$english)</code></p>
+                        <p class="fragment"><img src="./img/hist_01.jpg" alt=""></p>
                     </section>
                     <section>
                         <h2>分散の平方根を求める</h2>
