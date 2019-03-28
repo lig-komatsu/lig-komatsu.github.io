@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Ruby on Railsを触ってみて</title>
+		<meta name="description" content="Ruby on Railsを触ってみて">
+		<meta name="author" content="Tomoki Komatsu">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+                <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'ss/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+                <div class="slides">
+
+                <section data-background="">
+                    <h1>Ruby on Railsを触ってみて</h1>
+                    <h4><a href="http://liginc.co.jp/member/member_detail?user=tomoki" target="_blank">Tomoki Komatsu</a></h4>
+                </section>
+
+                <section>
+                    <h2>本日のお話</h2>
+                    <ul>
+                      <li class="fragment">自己紹介</li>
+                      <li class="fragment">Ruby on Railsとは</li>
+                      <li class="fragment">いまやってるRuby on Railsの勉強方法</li>
+                      <li class="fragment">Ruby on Railsで学べたこと</li>
+                      <li class="fragment">さいごに</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>自己紹介</h2>
+                    <p>ともぞうチームでリーダーやっています。Webディレクターです。</p>
+                    <p>エンジニア経験もデザイナー経験もありません。</p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Ruby on Railsとは</h2>
+                        <p class="fragment">Rubyで書かれているWebアプリケーションフレームワーク</p>
+                        <p class="fragment">Railsってよく略される</p>
+                        <p class="fragment">2004年くらいにアメリカで生まれた（Rubyは日本だけど）</p>
+                        <p class="fragment">昔のTwitterはRailsで開発されていた</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>いまやってるRuby on Railsの勉強方法</h2>
+                        <p class="fragment">とりあえずRubyの本を1冊終わらせた</p>
+                        <p class="fragment"><a href="https://prog-8.com/">Progate</a>でひたすらレッスン</p>
+                        <p class="fragment"><a href="https://railstutorial.jp/">Rails Tutorial</a></p>
+                        <p class="fragment">Ruby on Railsの本読む</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Ruby on Railsで学べたこと</h2>
+                        <p class="fragment">やっぱWebって難しいなって改めて思った</p>
+                        <p class="fragment">なんとなくほんのちょっと、ほんのちょびっと開発の工数感がわかった</p>
+                        <p class="fragment">POSTして、GETしてって会話で使えちゃう</p>
+                        <p class="fragment">CRUD</p>
+                        <p class="fragment">フロントエンドほんとすごい</p>
+                    </section>
+                    <section>
+                        <h2>CRUD</h2>
+                        <p class="fragment">C：CREATE</p>
+                        <p class="fragment">R：READ</p>
+                        <p class="fragment">U：UPDATE</p>
+                        <p class="fragment">D：DELETE</p>
+                    <p class="fragment">だいたいのソフトウェアはこの機能をもっていて、私達がつくっているWebサイト(WordPress)もこの機能を持っている</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>さいごに</h2>
+                        <p class="fragment">ぼくらがつくっているもの</p>
+                    </section>
+                </section>
+
+                <section data-background="http://i.giphy.com/3o6gE99DHZsbxMzkSk.gif">
+                  <h2 style="color : #fff; font-weight : bold;">ご清聴ありがとうございました</h2>
+                </section>
+                <section style="text-align: left;">
+                        <h1>おわり</h1>
+                        <p>
+                            - <a href="http://slides.com">Try the online editor</a> <br>
+                            - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+                        </p>
+                </section>
+		</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
